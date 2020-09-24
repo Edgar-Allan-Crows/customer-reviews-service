@@ -1,10 +1,12 @@
 {
   "name": "customer-reviews-service",
   "version": "1.0.0",
-  "description": "Creating a clone of an item page of the brilliant earth engagement ring website with a team of four. I am creating the customer reviews component.",
-  "main": "index.js",
+  "description": "Creating a clone of an item page of the brilliant earth engagement ring website with a team of four. This repo is for the customer reviews component.",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run ./server/index.js",
+    "test": "",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,24 @@
   "bugs": {
     "url": "https://github.com/Edgar-Allan-Crows/customer-reviews-service/issues"
   },
-  "homepage": "https://github.com/Edgar-Allan-Crows/customer-reviews-service#readme"
+  "homepage": "https://github.com/Edgar-Allan-Crows/customer-reviews-service#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "html-loader": "^1.3.1",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.4.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
 }
