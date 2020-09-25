@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS CustomerReviews;
+CREATE DATABASE IF NOT EXISTS fec_reviews;
 
-USE CustomerReviews;
+USE fec_reviews;
 
 CREATE TABLE IF NOT EXISTS reviews (
   review_id INT unsigned NOT NULL AUTO_INCREMENT,
@@ -14,8 +14,12 @@ CREATE TABLE IF NOT EXISTS reviews (
 
 CREATE TABLE IF NOT EXISTS images (
   image_id INT unsigned NOT NULL AUTO_INCREMENT,
-  url VARCHAR NOT NULL,
+  image_url VARCHAR(500) NOT NULL,
   review_id INT unsigned NOT NULL,
   PRIMARY KEY (image_id),
   FOREIGN KEY (review_id) REFERENCES reviews(review_id)
 );
+
+/*  Execute this file from the command line by typing:
+ *    mysql -u root < server/schema.sql
+ *  to create the database and the tables.*/
