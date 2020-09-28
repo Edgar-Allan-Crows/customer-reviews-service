@@ -4,7 +4,7 @@
   "description": "Creating a clone of an item page of the brilliant earth engagement ring website with a team of four. This repo is for the customer reviews component.",
   "private": true,
   "scripts": {
-    "start": "npm run ./server/index.js",
+    "start": "nodemon ./server/index.js",
     "test": "",
     "build": "webpack"
   },
