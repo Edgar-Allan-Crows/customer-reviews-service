@@ -4,9 +4,10 @@
   "description": "Creating a clone of an item page of the brilliant earth engagement ring website with a team of four. This repo is for the customer reviews component.",
   "private": true,
   "scripts": {
+    "build": "webpack",
+    "db:seed": "node ./database/seed.js",
     "start": "npm run ./server/index.js",
-    "test": "",
-    "build": "webpack"
+    "test": ""
   },
   "repository": {
     "type": "git",
