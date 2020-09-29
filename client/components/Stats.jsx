@@ -8,6 +8,11 @@ const StatsBar = styled.div`
   border: 1px solid black;
   flex-direction: row;
   justify-content: space-around;
+  text-transform: capitalize;
+  font-family: "Avenir Light";
+  letter-spacing: 0.025em;
+  font-size: 14px;
+  line-height: 1.428571429;
 `;
 
 const TotalScore = styled.div`

@@ -5,16 +5,22 @@ const SingleReview = styled.div`
   display: flex;
   border: 1px solid black;
   flex-direction: column;
+  font-size: 14px;
+  line-height: 1.428571429;
 `;
+
+
 
 const Review = () => (
   <SingleReview>
-    <div>Name</div>
-    <div>Date</div>
-    <div>City</div>
-    <div>Rating</div>
-    <div>Title</div>
-    <div>Review Body</div>
+    <div className="reviewDate">Date</div>
+    <div className="reviewDetails">
+      <div>Name</div>
+      <div>City</div>
+      <div>Rating</div>
+      <div>Title</div>
+      <p>Review Body</p>
+    </div>
   </SingleReview>
 )
 

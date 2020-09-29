@@ -21,7 +21,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div> Customer Reviews
+      <div>
+        <h2 id="componentTitle" >Customer Reviews</h2>
         <Stats />
         <ReviewsFeed />
         <button>Load More</button>
