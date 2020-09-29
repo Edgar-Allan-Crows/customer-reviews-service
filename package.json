@@ -7,7 +7,7 @@
     "build": "webpack",
     "db:seed": "node ./database/seed.js",
     "start": "npm run ./server/index.js",
-    "test": ""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
