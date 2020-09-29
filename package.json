@@ -7,7 +7,7 @@
     "build": "webpack -d --watch --config webpack.config.js",
     "db:seed": "node ./database/seed.js",
     "start": "node ./server/index.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
