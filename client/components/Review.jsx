@@ -9,7 +9,12 @@ const SingleReview = styled.div`
 
 const Review = () => (
   <SingleReview>
-    Review
+    <div>Name</div>
+    <div>Date</div>
+    <div>City</div>
+    <div>Rating</div>
+    <div>Title</div>
+    <div>Review Body</div>
   </SingleReview>
 )
 
