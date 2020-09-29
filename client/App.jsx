@@ -21,7 +21,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="container">
         <h2 id="componentTitle" >Customer Reviews</h2>
         <Stats />
         <ReviewsFeed />
