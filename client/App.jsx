@@ -21,12 +21,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>Hello!</div>
+      <div> Customer Reviews
         <Stats />
-        <Sort />
         <ReviewsFeed />
-        <button>Write A Review!</button>
         <button>Load More</button>
       </div>
     )
