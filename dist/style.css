@@ -45,10 +45,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
   margin-left: auto;
 }
 
-/* #container {
-
-} */
-
 #componentTitle {
   font-size: 20px;
 }
@@ -65,4 +61,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 .reviewDetails div {
   font-weight: normal;
   font-family: 'Avenir Medium';
+}
+
+/* Stats.jsx Component */
+#writeReviewLink{
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+#writeReviewLink:hover {
+  color: #3e9f8e;
 }

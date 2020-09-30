@@ -4,7 +4,6 @@ import Review from './Review.jsx';
 
 const Feed = styled.div`
   display: flex;
-  border: 2px solid black;
   flex-direction: column;
   justify-content: center;
 `;
