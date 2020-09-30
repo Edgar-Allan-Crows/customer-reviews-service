@@ -4,7 +4,7 @@ import { formatDate } from '../utils/helpers.js'
 
 const SingleReview = styled.div`
   display: flex;
-  border: 1px solid black;
+  border-top: 1px solid #d3d3d3;
   flex-direction: column;
   font-size: 14px;
   line-height: 1.428571429;
