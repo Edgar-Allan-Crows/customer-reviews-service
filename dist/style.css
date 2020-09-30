@@ -73,8 +73,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 /*Review.jsx Component*/
 .reviewDate {
   padding-bottom: 0px;
-  margin-top: 10px;
+  margin: 10px;
   margin-bottom: -15px;
+  margin-right: 0px;
   text-align: right;
   box-sizing: border-box;
   letter-spacing: 0.025em;
