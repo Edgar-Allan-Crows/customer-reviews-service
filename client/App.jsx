@@ -13,7 +13,6 @@ class App extends React.Component {
     this.state = {
       totalScore: null,
       totalReviews: 0,
-
       sortedValue: 'highestRating',
       reviewsArray: [],
       showReviews: 3
@@ -48,21 +47,35 @@ class App extends React.Component {
   }
 
   // Handle Sorting Change
-  handleChange(event) {
+  handleSortChange(dropDownValue) {
+    if (dropDownValue === "highestRating") {
+      var sortedArray = this.state.reviewsArray.sort((a,b) => {
+        return b.rating - a.rating;
+      })} else if (dropDownValue === "newest") {
+          var sortedArray = this.state.reviewsArray.sort((a,b) => {
+          return new Date(b.fecha) - new Date (a.fecha);
+        })} else if (dropDownValue === "oldest") {
+          var sortedArray = this.state.reviewsArray.sort((a,b) => {
+          return new Date(a.fecha) - new Date (b.fecha);
+        })}
     this.setState({
       totalScore: this.state.totalScore,
       totalReviews: this.state.totalReviews,
-      sortedValue: event.target.value,
-      reviewsArray: this.state.reviewsArray,
+      sortedValue: this.state.sortedValue,
+      reviewsArray: sortedArray,
       showReviews: this.state.showReviews
     })
+    sortedArray.forEach(item => console.log(item.fecha));
+    // "lowestRating"
+    // "mostHelpful"
+    // "leastHelpful"
   }
 
   render() {
     return (
       <div id="container">
         <h2 id="componentTitle">Customer Reviews</h2>
-        <Stats />
+        <Stats handleSortChange={this.handleSortChange.bind(this)}/>
         <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.state.showReviews}/>
         <button id="loadMoreButton" onClick={this.loadMore.bind(this)}>Load More</button>
       </div>
