@@ -9,21 +9,21 @@ const SortTitle = styled.div`
   }
 `;
 
-const SortByList = styled.div`
-  display: none;
-  list-style-type:none;
-`;
+// const SortByList = styled.div`
+//   display: none;
+//   list-style-type:none;
+// `;
 
-const Sort = () => (
-  <SortTitle> Sort: Highest Rating
-    <SortByList>
-      <li>Highest Rating</li>
-      <li>Newest</li>
-      <li>Oldest</li>
-      <li>Lowest Rating</li>
-      <li>Most Helpful</li>
-      <li>Least Helpful</li>
-    </SortByList>
+const Sort = ({handleChange, value}) => (
+  <SortTitle> Sort:
+    <select id="sortDropDown" value={value} onChange={(e) => {handleChange(e)}}>
+      <option value="highestRating">Highest Rating</option>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+      <option value="lowestRating">Lowest Rating</option>
+      <option value="mostHelpful">Most Helpful</option>
+      <option value="leastHelpful">Least Helpful</option>
+    </select>
   </SortTitle>
 )
 

@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       totalScore: null,
       totalReviews: 0,
+
       sortedValue: 'highestRating',
       reviewsArray: [],
       showReviews: 3
@@ -43,6 +44,17 @@ class App extends React.Component {
       sortedValue: this.state.sortedValue,
       reviewsArray: this.state.reviewsArray,
       showReviews: this.state.showReviews += 3
+    };
+  }
+
+  // Handle Sorting Change
+  handleChange(event) {
+    this.setState({
+      totalScore: this.state.totalScore,
+      totalReviews: this.state.totalReviews,
+      sortedValue: event.target.value
+      reviewsArray: this.state.reviewsArray,
+      showReviews: this.state.showReviews
     })
   }
 
