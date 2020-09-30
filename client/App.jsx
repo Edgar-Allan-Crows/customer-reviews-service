@@ -17,7 +17,7 @@ class App extends React.Component {
       sortedValue: 'highestRating',
       reviewsArray: [],
       showReviews: 3
-    };
+    }
   }
 
   componentDidMount() {
@@ -44,7 +44,7 @@ class App extends React.Component {
       sortedValue: this.state.sortedValue,
       reviewsArray: this.state.reviewsArray,
       showReviews: this.state.showReviews += 3
-    };
+    });
   }
 
   // Handle Sorting Change
@@ -52,7 +52,7 @@ class App extends React.Component {
     this.setState({
       totalScore: this.state.totalScore,
       totalReviews: this.state.totalReviews,
-      sortedValue: event.target.value
+      sortedValue: event.target.value,
       reviewsArray: this.state.reviewsArray,
       showReviews: this.state.showReviews
     })
