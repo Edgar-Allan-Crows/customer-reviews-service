@@ -11,15 +11,15 @@ const SingleReview = styled.div`
 
 
 
-const Review = () => (
-  <SingleReview>
-    <div className="reviewDate">Date</div>
+const Review = ({review}) => (
+  <SingleReview >
+    <div className="reviewDate">{review.fecha}</div>
     <div className="reviewDetails">
-      <div>Name</div>
-      <div>City</div>
-      <div>Rating</div>
-      <div>Title</div>
-      <p>Review Body</p>
+      <div>{review.username}</div>
+      <div>City, State</div>
+      <div>Rating: {review.rating} / 5</div>
+      <div>{review.title}</div>
+      <p>{review.review_body}</p>
     </div>
   </SingleReview>
 )

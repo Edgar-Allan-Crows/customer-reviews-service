@@ -8,13 +8,13 @@ const Feed = styled.div`
   justify-content: center;
 `;
 
-const ReviewsFeed = () => (
+const ReviewsFeed = ({reviewsArray, showReviews}) => (
   <Feed>
-    <Review />
-    <Review />
-    <Review />
-    <Review />
-    <Review />
+    {reviewsArray.slice(0, showReviews).map((review) => {
+        return (
+          <Review key={review.review_id} review={review}/>
+        )
+    })}
   </Feed>
 )
 

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -d --watch --config webpack.config.js",
     "db:seed": "node ./database/seed.js",
-    "start": "node ./server/index.js",
+    "start": "nodemon ./server/index.js",
     "test": "jest --coverage"
   },
   "repository": {
@@ -34,6 +34,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
     "@fortawesome/free-regular-svg-icons": "^5.15.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",

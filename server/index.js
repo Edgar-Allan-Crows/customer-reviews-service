@@ -10,7 +10,7 @@ app.get('/api', (req, res) => {
     if (err) throw err;
     res.send(result);
   });
-  db.end();
+  // db.end(); // Removed because I believe this is what was causing the 'Cannot enqueue Query after invoking quit' error
 })
 
 app.listen(port, () => {
