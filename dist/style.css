@@ -49,6 +49,25 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
   font-size: 20px;
 }
 
+#loadMoreButton {
+  color: #fff;
+  width: 200px;
+  padding: .7em 1.3em .5em;
+  text-transform: capitalize;
+  font-family: 'Avenir Medium';
+  font-size: 15px;
+  border-radius: 0;
+  background-color: #3e9f8e;
+  border-color: #3e9f8e;
+  letter-spacing: .05em;
+  line-height: 1.33;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  user-select: none;
+}
 
 /*Review.jsx Component*/
 .reviewDate {

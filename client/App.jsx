@@ -25,7 +25,7 @@ class App extends React.Component {
         <h2 id="componentTitle" >Customer Reviews</h2>
         <Stats />
         <ReviewsFeed />
-        <button>Load More</button>
+        <button id="loadMoreButton">Load More</button>
       </div>
     )
   }
