@@ -15,7 +15,7 @@ class App extends React.Component {
       totalReviews: 0,
       sortedValue: 'highestRating',
       reviewsArray: [],
-      showReviews: 4
+      showReviews: 3
     };
   }
 
@@ -36,13 +36,23 @@ class App extends React.Component {
     })
   }
 
+  loadMore() {
+    this.setState({
+      totalScore: this.state.totalScore,
+      totalReviews: this.state.totalReviews,
+      sortedValue: this.state.sortedValue,
+      reviewsArray: this.state.reviewsArray,
+      showReviews: this.state.showReviews += 3
+    })
+  }
+
   render() {
     return (
       <div id="container">
         <h2 id="componentTitle">Customer Reviews</h2>
         <Stats />
         <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.state.showReviews}/>
-        <button id="loadMoreButton">Load More</button>
+        <button id="loadMoreButton" onClick={this.loadMore.bind(this)}>Load More</button>
       </div>
     )
   }
