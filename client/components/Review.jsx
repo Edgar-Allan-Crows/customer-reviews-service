@@ -15,10 +15,10 @@ const Review = ({review}) => (
   <SingleReview >
     <div className="reviewDate">{review.fecha}</div>
     <div className="reviewDetails">
-      <div>{review.username}</div>
-      <div>City, State</div>
+      <div className="nameCity">{review.username}</div>
+      <div className="nameCity">City, State</div>
       <div>Rating: {review.rating} / 5</div>
-      <div>{review.title}</div>
+      <div id="reviewTitle">{review.title}</div>
       <p>{review.review_body}</p>
     </div>
   </SingleReview>

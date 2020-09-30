@@ -73,6 +73,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 /*Review.jsx Component*/
 .reviewDate {
   padding-bottom: 0px;
+  margin-top: 10px;
+  margin-bottom: -15px;
   text-align: right;
   box-sizing: border-box;
   letter-spacing: 0.025em;
@@ -92,6 +94,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 
 #writeReviewLink:hover {
   color: #3e9f8e;
+}
+
+.nameCity{
+  margin-bottom: 10px;
+}
+
+#reviewTitle{
+  margin-top: 10px;
+  margin-bottom: -12.5px;
 }
 
 /* Sort.jsx Component */
