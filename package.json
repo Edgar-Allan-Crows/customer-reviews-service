@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -d --watch --config webpack.config.js",
     "db:seed": "node ./database/seed.js",
-    "start": "node ./server/index.js",
+    "start": "nodemon ./server/index.js",
     "test": "jest --coverage"
   },
   "repository": {

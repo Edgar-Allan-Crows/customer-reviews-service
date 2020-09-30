@@ -39,7 +39,7 @@ class App extends React.Component {
       <div id="container">
         <h2 id="componentTitle" >Customer Reviews</h2>
         <Stats />
-        <ReviewsFeed />
+        <ReviewsFeed reviewsArray={this.state.reviewsArray}/>
         <button id="loadMoreButton">Load More</button>
       </div>
     )
