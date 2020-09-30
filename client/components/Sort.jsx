@@ -14,9 +14,9 @@ const SortTitle = styled.div`
 //   list-style-type:none;
 // `;
 
-const Sort = () => (
+const Sort = ({handleChange, value}) => (
   <SortTitle> Sort:
-    <select>
+    <select value={value} onChange={(e) => {handleChange(e)}}>
       <option value="highestRating">Highest Rating</option>
       <option value="newest">Newest</option>
       <option value="oldest">Oldest</option>
