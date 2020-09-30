@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Sort from './Sort.jsx';
 import ratingPlaceholder from '../img/fiveStarPlaceholder.png';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { f044 } from '@fortawesome/free-regular-svg-icons';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { f044 } from '@fortawesome/free-regular-svg-icons';
 
 
 const StatsBar = styled.div`
