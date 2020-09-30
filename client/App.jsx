@@ -28,7 +28,8 @@ class App extends React.Component {
           totalScore: this.state.totalScore,
           totalReviews: this.state.totalReviews,
           sortedValue: this.state.sortedValue,
-          reviewsArray: res
+          reviewsArray: res,
+          showReviews: this.state.showReviews
         });
         console.log(this.state.reviewsArray);
       }
@@ -38,9 +39,9 @@ class App extends React.Component {
   render() {
     return (
       <div id="container">
-        <h2 id="componentTitle" >Customer Reviews</h2>
+        <h2 id="componentTitle">Customer Reviews</h2>
         <Stats />
-        <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.showReviews}/>
+        <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.state.showReviews}/>
         <button id="loadMoreButton">Load More</button>
       </div>
     )

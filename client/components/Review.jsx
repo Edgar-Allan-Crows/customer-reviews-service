@@ -12,7 +12,7 @@ const SingleReview = styled.div`
 
 
 const Review = ({review}) => (
-  <SingleReview key={review.review_id}>
+  <SingleReview >
     <div className="reviewDate">{review.fecha}</div>
     <div className="reviewDetails">
       <div>{review.username}</div>

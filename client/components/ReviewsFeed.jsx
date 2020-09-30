@@ -10,10 +10,10 @@ const Feed = styled.div`
 
 const ReviewsFeed = ({reviewsArray, showReviews}) => (
   <Feed>
-    {reviewsArray.map((review) => {
-      return (
-        <Review review={review}/>
-      )
+    {reviewsArray.slice(reviewsArray.length - showReviews).map((review) => {
+        return (
+          <Review key={review.review_id} review={review}/>
+        )
     })}
   </Feed>
 )
