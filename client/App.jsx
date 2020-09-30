@@ -57,6 +57,15 @@ class App extends React.Component {
         })} else if (dropDownValue === "oldest") {
           var sortedArray = this.state.reviewsArray.sort((a,b) => {
           return new Date(a.fecha) - new Date (b.fecha);
+        })} else if (dropDownValue === "lowestRating") {
+          var sortedArray = this.state.reviewsArray.sort((a,b) => {
+          return a.rating - b.rating;
+        })} else if (dropDownValue === "mostHelpful") {
+          var sortedArray = this.state.reviewsArray.sort((a,b) => {
+          return this.state.reviewsArray.indexOf(b) - this.state.reviewsArray.indexOf(a) // Come back and add logic later
+        })} else if (dropDownValue === "leastHelpful") {
+          var sortedArray = this.state.reviewsArray.sort((a,b) => {
+          return this.state.reviewsArray.indexOf(b) - this.state.reviewsArray.indexOf(a)  // Come back and add logic later
         })}
     this.setState({
       totalScore: this.state.totalScore,
@@ -65,10 +74,6 @@ class App extends React.Component {
       reviewsArray: sortedArray,
       showReviews: this.state.showReviews
     })
-    sortedArray.forEach(item => console.log(item.fecha));
-    // "lowestRating"
-    // "mostHelpful"
-    // "leastHelpful"
   }
 
   render() {
