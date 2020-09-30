@@ -14,7 +14,8 @@ class App extends React.Component {
       totalScore: null,
       totalReviews: 0,
       sortedValue: 'highestRating',
-      reviewsArray: []
+      reviewsArray: [],
+      showReviews: 4
     };
   }
 
@@ -39,7 +40,7 @@ class App extends React.Component {
       <div id="container">
         <h2 id="componentTitle" >Customer Reviews</h2>
         <Stats />
-        <ReviewsFeed reviewsArray={this.state.reviewsArray}/>
+        <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.showReviews}/>
         <button id="loadMoreButton">Load More</button>
       </div>
     )
