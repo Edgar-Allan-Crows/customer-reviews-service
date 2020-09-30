@@ -24,7 +24,7 @@ const TotalScore = styled.div`
   margin-right: 50px;
 `;
 
-const Stats = ({handleChange, value}) => (
+const Stats = ({handleSortChange, value}) => (
   <StatsBar>
     <TotalScore>
       Total Score:
@@ -33,7 +33,7 @@ const Stats = ({handleChange, value}) => (
     </TotalScore>
     {/* <FontAwesomeIcon icon={f044} /> */}
     <a id="writeReviewLink" href="https://www.brilliantearth.com/review/?pr_page_id=BE1D64-18KW">Leave Review</a>
-    <Sort handleChange={handleChange} value={value}/>
+    <Sort handleSortChange={handleSortChange} value={value}/>
   </StatsBar>
 )
 
