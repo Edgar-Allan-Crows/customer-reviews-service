@@ -16,6 +16,7 @@ const StatsBar = styled.div`
   letter-spacing: 0.025em;
   font-size: 14px;
   line-height: 1.428571429;
+  margin-bottom: 10px;
 `;
 
 const TotalScore = styled.div`
