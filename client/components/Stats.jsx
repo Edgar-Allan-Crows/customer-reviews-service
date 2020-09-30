@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Sort from './Sort.jsx';
 import ratingPlaceholder from '../img/fiveStarPlaceholder.png';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { f044 } from '@fortawesome/free-regular-svg-icons';
+
 
 const StatsBar = styled.div`
   display: flex;
@@ -20,15 +24,16 @@ const TotalScore = styled.div`
   margin-right: 50px;
 `;
 
-const Stats = () => (
+const Stats = ({handleChange, value}) => (
   <StatsBar>
     <TotalScore>
       Total Score:
       <img src={ratingPlaceholder} />
       5.0 (111 Reviews)
     </TotalScore>
+    {/* <FontAwesomeIcon icon={f044} /> */}
     <a id="writeReviewLink" href="https://www.brilliantearth.com/review/?pr_page_id=BE1D64-18KW">Leave Review</a>
-    <Sort />
+    <Sort handleChange={handleChange} value={value}/>
   </StatsBar>
 )
 

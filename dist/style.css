@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
   cursor: pointer;
   border: 1px solid transparent;
   user-select: none;
+  margin-top: 2.5em;
 }
 
 /*Review.jsx Component*/
@@ -91,4 +92,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 
 #writeReviewLink:hover {
   color: #3e9f8e;
+}
+
+/* Sort.jsx Component */
+#sortDropDown{
+  -webkit-appearance: none;
+  border: 0;
+  background: #F9F9F8;
+  font-family: 'Avenir Book',Arial,Helvetica,sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.428571429;
+  margin-left: 1px;
+  margin-bottom: 10px;
+}
+
+#sortDropDown:hover {
+  color: #3e9f8e;
+  cursor: pointer;
 }
