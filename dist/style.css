@@ -114,6 +114,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
   cursor: pointer;
 }
 
+/* .caret{
+  opacity: .7;
+  border: 0;
+  width: 12px;
+  height: 6px;
+  background: url(./upCaret.png) left top no-repeat;
+} */
+
 /* Sort.jsx Component */
 #sortDropDown{
   -webkit-appearance: none;

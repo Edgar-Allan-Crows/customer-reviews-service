@@ -9,11 +9,6 @@ const SortTitle = styled.div`
   }
 `;
 
-// const SortByList = styled.div`
-//   display: none;
-//   list-style-type:none;
-// `;
-
 const Sort = ({handleChange, value}) => (
   <SortTitle> Sort:
     <select id="sortDropDown" value={value} onChange={(e) => {handleChange(e)}}>
@@ -28,11 +23,3 @@ const Sort = ({handleChange, value}) => (
 )
 
 export default Sort;
-
-// const SortByList = styled.div`
-//   display: none;
-//   list-style-type:none;
-//   ${SortTitle}:hover & {
-//     display: inline;
-//   }
-// `;

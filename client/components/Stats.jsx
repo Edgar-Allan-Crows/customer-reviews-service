@@ -24,6 +24,14 @@ const TotalScore = styled.div`
   margin-right: 50px;
 `;
 
+const Caret = styled.div`
+  display: flex;
+  opacity: .7;
+  border: 0;
+  width: auto;
+  height: auto;
+`;
+
 const Stats = ({handleChange, value}) => (
   <StatsBar>
     <TotalScore>
@@ -35,6 +43,7 @@ const Stats = ({handleChange, value}) => (
       <FontAwesomeIcon id="coffeeIcon" icon={faCoffee} />
     </a>
     <Sort handleChange={handleChange} value={value}/>
+    <Caret />
   </StatsBar>
 )
 
