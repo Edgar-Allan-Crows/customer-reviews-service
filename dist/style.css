@@ -1,0 +1,94 @@
+body {
+  background: #F9F9F8;
+  font-family: 'Avenir Book',Arial,Helvetica,sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.428571429;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
+  font-family: 'ZapfHumanist601BT-Roman';
+  font-weight: 400;
+  color: #000;
+  text-transform: capitalize;
+}
+
+/* App.jsx Component */
+
+@media (min-width: 1200px){
+#container {
+    max-width: 1030px;
+}}
+
+@media (min-width: 1200px){
+#container {
+    max-width: 1170px;
+}}
+
+@media (min-width: 992px){
+#container {
+    max-width: 970px;
+}}
+
+@media (min-width: 768px){
+#container {
+    max-width: 750px;
+}}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#componentTitle {
+  font-size: 20px;
+}
+
+#loadMoreButton {
+  color: #fff;
+  width: 200px;
+  padding: .7em 1.3em .5em;
+  text-transform: capitalize;
+  font-family: 'Avenir Medium';
+  font-size: 15px;
+  border-radius: 0;
+  background-color: #3e9f8e;
+  border-color: #3e9f8e;
+  letter-spacing: .05em;
+  line-height: 1.33;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+/*Review.jsx Component*/
+.reviewDate {
+  padding-bottom: 0px;
+  text-align: right;
+  box-sizing: border-box;
+  letter-spacing: 0.025em;
+}
+
+.reviewDetails div {
+  font-weight: normal;
+  font-family: 'Avenir Medium';
+}
+
+/* Stats.jsx Component */
+#writeReviewLink{
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+#writeReviewLink:hover {
+  color: #3e9f8e;
+}

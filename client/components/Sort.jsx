@@ -3,19 +3,19 @@ import styled from 'styled-components';
 
 const SortTitle = styled.div`
   display: flex;
-  border: 1px solid black;
+  cursor: pointer;
+  ${SortTitle}:hover {
+    color: #3e9f8e;
+  }
 `;
 
 const SortByList = styled.div`
   display: none;
   list-style-type:none;
-  ${SortTitle}:hover & {
-    display: inline;
-  }
 `;
 
 const Sort = () => (
-  <SortTitle> Sort:
+  <SortTitle> Sort: Highest Rating
     <SortByList>
       <li>Highest Rating</li>
       <li>Newest</li>
@@ -28,3 +28,11 @@ const Sort = () => (
 )
 
 export default Sort;
+
+// const SortByList = styled.div`
+//   display: none;
+//   list-style-type:none;
+//   ${SortTitle}:hover & {
+//     display: inline;
+//   }
+// `;
