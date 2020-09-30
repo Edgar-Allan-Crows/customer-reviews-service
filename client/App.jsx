@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+// import axios from 'axios';
 
 import Stats from './components/Stats.jsx';
 import Sort from './components/Sort.jsx';
@@ -12,12 +13,26 @@ class App extends React.Component {
     this.state = {
       totalScore: null,
       totalReviews: 0,
-      sortedReviews: null
+      sortedValue: 'highestRating',
+      reviewsArray: []
     };
   }
 
-  // Methods
-  // Sorting Method
+  componentDidMount() {
+    $.ajax({
+      url: '/api',
+      method: 'GET',
+      success: (res) => {
+        this.setState({
+          totalScore: this.state.totalScore,
+          totalReviews: this.state.totalReviews,
+          sortedValue: this.state.sortedValue,
+          reviewsArray: res
+        });
+        console.log(this.state.reviewsArray);
+      }
+    })
+  }
 
   render() {
     return (
