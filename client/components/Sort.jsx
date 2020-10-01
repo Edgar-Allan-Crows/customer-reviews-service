@@ -9,9 +9,9 @@ const SortTitle = styled.div`
   }
 `;
 
-const Sort = ({handleChange, value}) => (
+const Sort = ({handleSortChange, value}) => (
   <SortTitle> Sort:
-    <select id="sortDropDown" value={value} onChange={(e) => {handleChange(e)}}>
+    <select id="sortDropDown" value={value} onChange={(e) => {handleSortChange(e.target.value)}}>
       <option value="highestRating">Highest Rating</option>
       <option value="newest">Newest</option>
       <option value="oldest">Oldest</option>
