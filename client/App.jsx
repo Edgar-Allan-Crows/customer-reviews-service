@@ -34,10 +34,6 @@ class App extends React.Component {
 
   loadMore() {
     this.setState({
-      totalScore: this.state.totalScore,
-      totalReviews: this.state.totalReviews,
-      sortedValue: this.state.sortedValue,
-      reviewsArray: this.state.reviewsArray,
       showReviews: this.state.showReviews += 3
     });
   }
