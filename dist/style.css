@@ -86,6 +86,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
   font-family: 'Avenir Medium';
 }
 
+#ratingImg {
+  height: 20px;
+  margin-bottom: -10px;
+}
+
 /* Stats.jsx Component */
 #writeReviewLink{
   margin-right: 20px;
