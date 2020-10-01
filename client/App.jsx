@@ -17,6 +17,8 @@ class App extends React.Component {
       reviewsArray: [],
       showReviews: 3
     }
+    this.handleSortChange = this.handleSortChange.bind(this);
+    this.loadMore = this.loadMore.bind(this);
   }
 
   componentDidMount() {
@@ -68,9 +70,9 @@ class App extends React.Component {
     return (
       <div id="container">
         <h2 id="componentTitle">Customer Reviews</h2>
-        <Stats handleSortChange={this.handleSortChange.bind(this)}/>
+        <Stats handleSortChange={this.handleSortChange}/>
         <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.state.showReviews}/>
-        <button id="loadMoreButton" onClick={this.loadMore.bind(this)}>Load More</button>
+        <button id="loadMoreButton" onClick={this.loadMore}>Load More</button>
       </div>
     )
   }
