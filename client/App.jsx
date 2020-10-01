@@ -13,7 +13,6 @@ class App extends React.Component {
     this.state = {
       totalScore: null,
       totalReviews: 0,
-
       sortedValue: 'highestRating',
       reviewsArray: [],
       showReviews: 3
