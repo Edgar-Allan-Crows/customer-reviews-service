@@ -32,7 +32,7 @@ const Caret = styled.div`
   height: auto;
 `;
 
-const Stats = ({handleChange, value}) => (
+const Stats = ({handleSortChange, value}) => (
   <StatsBar>
     <TotalScore>
       Total Score:
@@ -42,7 +42,7 @@ const Stats = ({handleChange, value}) => (
     <a id="writeReviewLink" href="https://www.brilliantearth.com/review/?pr_page_id=BE1D64-18KW">Leave Review
       <FontAwesomeIcon id="coffeeIcon" icon={faCoffee} />
     </a>
-    <Sort handleChange={handleChange} value={value}/>
+    <Sort handleSortChange={handleSortChange} value={value}/>
     <Caret />
   </StatsBar>
 )

@@ -60,11 +60,7 @@ class App extends React.Component {
           return this.state.reviewsArray.indexOf(b) - this.state.reviewsArray.indexOf(a)  // Come back and add logic later
         })}
     this.setState({
-      totalScore: this.state.totalScore,
-      totalReviews: this.state.totalReviews,
-      sortedValue: this.state.sortedValue,
-      reviewsArray: sortedArray,
-      showReviews: this.state.showReviews
+      reviewsArray: sortedArray
     })
   }
 
