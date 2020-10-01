@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Sort from './Sort.jsx';
 import ratingPlaceholder from '../img/fiveStarPlaceholder.png';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { f044 } from '@fortawesome/free-regular-svg-icons';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const StatsBar = styled.div`
   display: flex;
@@ -16,6 +15,7 @@ const StatsBar = styled.div`
   letter-spacing: 0.025em;
   font-size: 14px;
   line-height: 1.428571429;
+  margin-bottom: 10px;
 `;
 
 const TotalScore = styled.div`
@@ -24,16 +24,26 @@ const TotalScore = styled.div`
   margin-right: 50px;
 `;
 
-const Stats = ({handleSortChange, value}) => (
+const Caret = styled.div`
+  display: flex;
+  opacity: .7;
+  border: 0;
+  width: auto;
+  height: auto;
+`;
+
+const Stats = ({handleChange, value}) => (
   <StatsBar>
     <TotalScore>
       Total Score:
       <img src={ratingPlaceholder} />
       5.0 (111 Reviews)
     </TotalScore>
-    {/* <FontAwesomeIcon icon={f044} /> */}
-    <a id="writeReviewLink" href="https://www.brilliantearth.com/review/?pr_page_id=BE1D64-18KW">Leave Review</a>
-    <Sort handleSortChange={handleSortChange} value={value}/>
+    <a id="writeReviewLink" href="https://www.brilliantearth.com/review/?pr_page_id=BE1D64-18KW">Leave Review
+      <FontAwesomeIcon id="coffeeIcon" icon={faCoffee} />
+    </a>
+    <Sort handleChange={handleChange} value={value}/>
+    <Caret />
   </StatsBar>
 )
 
