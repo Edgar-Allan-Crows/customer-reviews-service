@@ -17,6 +17,8 @@ class App extends React.Component {
       reviewsArray: [],
       showReviews: 3
     }
+    this.handleSortChange = this.handleSortChange.bind(this);
+    this.loadMore = this.loadMore.bind(this);
   }
 
   componentDidMount() {
@@ -25,11 +27,7 @@ class App extends React.Component {
       method: 'GET',
       success: (res) => {
         this.setState({
-          totalScore: this.state.totalScore,
-          totalReviews: this.state.totalReviews,
-          sortedValue: this.state.sortedValue,
           reviewsArray: res,
-          showReviews: this.state.showReviews
         });
         console.log(this.state.reviewsArray);
       }
@@ -38,10 +36,6 @@ class App extends React.Component {
 
   loadMore() {
     this.setState({
-      totalScore: this.state.totalScore,
-      totalReviews: this.state.totalReviews,
-      sortedValue: this.state.sortedValue,
-      reviewsArray: this.state.reviewsArray,
       showReviews: this.state.showReviews += 3
     });
   }
@@ -68,11 +62,7 @@ class App extends React.Component {
           return this.state.reviewsArray.indexOf(b) - this.state.reviewsArray.indexOf(a)  // Come back and add logic later
         })}
     this.setState({
-      totalScore: this.state.totalScore,
-      totalReviews: this.state.totalReviews,
-      sortedValue: this.state.sortedValue,
-      reviewsArray: sortedArray,
-      showReviews: this.state.showReviews
+      reviewsArray: sortedArray
     })
   }
 
@@ -80,9 +70,9 @@ class App extends React.Component {
     return (
       <div id="container">
         <h2 id="componentTitle">Customer Reviews</h2>
-        <Stats handleSortChange={this.handleSortChange.bind(this)}/>
+        <Stats handleSortChange={this.handleSortChange}/>
         <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.state.showReviews}/>
-        <button id="loadMoreButton" onClick={this.loadMore.bind(this)}>Load More</button>
+        <button id="loadMoreButton" onClick={this.loadMore}>Load More</button>
       </div>
     )
   }
