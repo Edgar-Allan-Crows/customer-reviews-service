@@ -25,11 +25,7 @@ class App extends React.Component {
       method: 'GET',
       success: (res) => {
         this.setState({
-          totalScore: this.state.totalScore,
-          totalReviews: this.state.totalReviews,
-          sortedValue: this.state.sortedValue,
           reviewsArray: res,
-          showReviews: this.state.showReviews
         });
         console.log(this.state.reviewsArray);
       }
