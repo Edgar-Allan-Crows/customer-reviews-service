@@ -79,3 +79,5 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('customerReviews'))
+
+export default App;
