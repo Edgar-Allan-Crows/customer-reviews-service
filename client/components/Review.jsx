@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { formatDate } from '../utils/helpers.js'
-import fiveStars from '../img/5-stars.png';
-import fourStars from '../img/4-stars.png';
-import threeStars from '../img/3-stars.png';
-import twoStars from '../img/2-stars.png';
-import oneStar from '../img/1-star.png';
 
 const SingleReview = styled.div`
   display: flex;
@@ -24,15 +19,15 @@ const Review = ({review}) => (
 
         {[review.rating].map((rating, key) => {
           if (rating === 5) {
-            return <img key={key} id="ratingImg" src={fiveStars} />
+            return <img key={key} className="ratingImg" src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/5-stars.png" />
           } else if (rating === 4) {
-            return <img key={key} id="ratingImg" src={fourStars} />
+            return <img key={key} className="ratingImg" src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/4-stars.png" />
           } else if (rating === 3) {
-            return <img key={key} id="ratingImg" src={threeStars} />
+            return <img key={key} className="ratingImg" src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/3-stars.png"/>
           } else if (rating === 2) {
-            return <img key={key} id="ratingImg" src={twoStars} />
+            return <img key={key} className="ratingImg" src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/2-stars.png"/>
           } else if (rating === 1) {
-            return <img key={key} id="ratingImg" src={oneStar} />
+            return <img key={key} className="ratingImg" src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/1-star.png"/>
           }
         })}
 

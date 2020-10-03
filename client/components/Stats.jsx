@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Sort from './Sort.jsx';
-import ratingPlaceholder from '../img/fiveStarPlaceholder.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -36,7 +35,7 @@ const Stats = ({handleSortChange, value}) => (
   <StatsBar>
     <TotalScore>
       Total Score:
-      <img src={ratingPlaceholder} />
+      <img className="ratingImg" src='https://edgar-allan-crows-reviews-images.s3.amazonaws.com/5-stars.png' />
       5.0 (111 Reviews)
     </TotalScore>
     <a id="writeReviewLink" href="https://www.brilliantearth.com/review/?pr_page_id=BE1D64-18KW">Leave Review
