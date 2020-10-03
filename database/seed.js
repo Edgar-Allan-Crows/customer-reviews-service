@@ -1,6 +1,5 @@
 const mysql = require('mysql');
 const faker = require('faker');
-const moment = require('moment');
 
 // Open a connection to the database
 const connection = mysql.createConnection({
@@ -22,13 +21,14 @@ connection.connect((err) => {
     // Use faker to create test data
     var username_fake = faker.name.firstName();
     var fecha_fake = faker.date.past();
-    var formattedDate = JSON.stringify(fecha_fake).split('T')[0].split('"').join('')
+    var formattedDate = JSON.stringify(fecha_fake).split('T')[0].split('"').join('');
+    var city_state_fake = `${faker.address.city()}, ${faker.address.state()}`;
     var rating_fake = Math.floor(Math.random() * (5 - 1) + 1);
     var title_fake = faker.random.words();
     var review_body_fake = faker.lorem.paragraph();
 
     // Populate reviews table
-    let entry = `INSERT INTO reviews (username, fecha, rating, title, review_body) VALUES ("${username_fake}", "${formattedDate}", "${rating_fake}", "${title_fake}", "${review_body_fake}")`;
+    let entry = `INSERT INTO reviews (username, fecha, city_state, rating, title, review_body) VALUES ("${username_fake}", "${formattedDate}", "${city_state_fake}", "${rating_fake}", "${title_fake}", "${review_body_fake}")`;
     connection.query(entry, (err, result) => {
       if (err) throw err;
       console.log('1 reviews table record inserted');
@@ -36,7 +36,7 @@ connection.connect((err) => {
     reviews_count++;
   }
 
-  while (images_count < 100) {
+  while (images_count < 25) {
     var image_review_id = Math.floor(Math.random() * (100 - 1) + 1);
     var image_url_fake = faker.image.imageUrl();
     // Populate images table
