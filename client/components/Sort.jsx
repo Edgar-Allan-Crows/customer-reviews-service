@@ -19,6 +19,7 @@ const Sort = ({handleSortChange, value}) => (
       <option value="mostHelpful">Most Helpful</option>
       <option value="leastHelpful">Least Helpful</option>
     </select>
+    {/* <img id='caret' src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/caret.jpg" /> */}
   </SortTitle>
 )
 

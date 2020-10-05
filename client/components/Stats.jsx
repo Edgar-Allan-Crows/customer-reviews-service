@@ -36,7 +36,10 @@ const Stats = ({handleSortChange, value}) => (
     <TotalScore>
       Total Score:
       <img className="ratingImg" src='https://edgar-allan-crows-reviews-images.s3.amazonaws.com/5-stars.png' />
-      5.0 (111 Reviews)
+      <div>
+        <span>5.0</span>
+        <span id="noOfReviews">(111 Reviews)</span>
+      </div>
     </TotalScore>
     <a id="writeReviewLink" href="https://www.brilliantearth.com/review/?pr_page_id=BE1D64-18KW">Leave Review
       <FontAwesomeIcon id="coffeeIcon" icon={faCoffee} />

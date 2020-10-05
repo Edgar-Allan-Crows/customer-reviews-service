@@ -15,7 +15,7 @@ const Review = ({review}) => (
     <div className="reviewDate">{formatDate(review.fecha)}</div>
     <div className="reviewDetails">
       <div className="nameCity">{review.username}</div>
-      <div className="nameCity">City, State</div>
+      <div className="nameCity">{review.city_state}</div>
 
         {[review.rating].map((rating, key) => {
           if (rating === 5) {

@@ -87,8 +87,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 }
 
 .ratingImg {
-  height: 20px;
+  height: 24px;
   margin-bottom: -10px;
+  margin-right: 5px;
 }
 
 /* Stats.jsx Component */
@@ -119,6 +120,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
   cursor: pointer;
 }
 
+#noOfReviews{
+  font-size:12px;
+  font-family: "Avenir Light";
+  margin-left: 5px;
+}
+
 /* .caret{
   opacity: .7;
   border: 0;
@@ -143,4 +150,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 #sortDropDown:hover {
   color: #3e9f8e;
   cursor: pointer;
+}
+
+#caret{
+  width: 20px;
 }
