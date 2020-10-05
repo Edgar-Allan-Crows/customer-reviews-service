@@ -34,17 +34,29 @@ class App extends React.Component {
     })
 
     $.ajax({
-      url: '/api/stats',
+      url: '/api/totalScore',
       method: 'GET',
       success: (res) => {
         console.log(res);
         this.setState({
-          totalScore: res.totalScore,
-          totalReviews: res.totalReviews
+          totalScore: res
+        });
+      }
+    })
+
+    $.ajax({
+      url: '/api/reviewCount',
+      method: 'GET',
+      success: (res) => {
+        console.log(res);
+        this.setState({
+          totalReviews: res
         });
       }
     })
   }
+
+
 
   loadMore() {
     this.setState({

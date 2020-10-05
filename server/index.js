@@ -13,35 +13,33 @@ app.get('/api/reviews', (req, res) => {
     if (err) throw err;
     res.send(result);
   });
-  // db.end(); // Removed because I believe this is what was causing the 'Cannot enqueue Query after invoking quit' error
 })
 
-app.get('/api/stats', (req, res) => {
-  var returnObj = {
-    totalReviews: 0,
-    totalScore: null
-  }
-  // Get total number of reviews
-  let noReviews = db.query('SELECT COUNT(*) FROM reviews' , (err, result) => {
-    if (err) throw err;
-    console.log('noReviews: ', result)
-  });
-
+app.get('/api/totalScore', (req, res) => {
   // Calculate average reviews score
   let score = db.query('SELECT AVG(rating) AS AverageScore FROM reviews', (err, results) => {
     if (err) {
       console.log('There was an error getting the average')
       throw err;
     } else {
-      console.log('Average Score: ', results)
+      var totalScore = results['0'].AverageScore;
+      console.log(totalScore);
+      res.send({totalScore: totalScore});
     }
   })
-  res.end();
-  // Send both number of reviews and reviews score back
-  // res.send({
-  //   totalReviews: noReviews,
-  //   totalScore: score
-  // })
+})
+
+app.get('/api/reviewCount', (req, res) => {
+  // Get total number of reviews
+  let noReviews = db.query('SELECT COUNT(*) FROM reviews' , (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+      var totalReviews = result['0']['COUNT(*)'];
+      console.log(totalReviews);
+      res.send({totalReviews: totalReviews});
+    }
+  });
 })
 
 app.listen(port, () => {
