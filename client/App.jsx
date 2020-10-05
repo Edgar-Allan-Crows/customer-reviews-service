@@ -29,7 +29,6 @@ class App extends React.Component {
         this.setState({
           reviewsArray: res,
         });
-        //console.log(this.state.reviewsArray);
       }
     })
 
@@ -37,9 +36,8 @@ class App extends React.Component {
       url: '/api/totalScore',
       method: 'GET',
       success: (res) => {
-        console.log(res);
         this.setState({
-          totalScore: res
+          totalScore: res.totalScore
         });
       }
     })
@@ -48,9 +46,8 @@ class App extends React.Component {
       url: '/api/reviewCount',
       method: 'GET',
       success: (res) => {
-        console.log(res);
         this.setState({
-          totalReviews: res
+          totalReviews: res.totalReviews
         });
       }
     })
@@ -92,7 +89,7 @@ class App extends React.Component {
     return (
       <div id="container">
         <h2 id="componentTitle">Customer Reviews</h2>
-        <Stats handleSortChange={this.handleSortChange}/>
+        <Stats totalScore={this.state.totalScore} totalReviews={this.state.totalReviews} handleSortChange={this.handleSortChange}/>
         <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.state.showReviews}/>
         <button id="loadMoreButton" onClick={this.loadMore}>Load More</button>
       </div>
