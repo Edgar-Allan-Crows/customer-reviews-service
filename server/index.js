@@ -22,8 +22,7 @@ app.get('/api/totalScore', (req, res) => {
       console.log('There was an error getting the average')
       throw err;
     } else {
-      var totalScore = results['0'].AverageScore;
-      console.log(totalScore);
+      var totalScore = Math.round(results['0'].AverageScore);
       res.send({totalScore: totalScore});
     }
   })
@@ -36,7 +35,6 @@ app.get('/api/reviewCount', (req, res) => {
       throw err;
     } else {
       var totalReviews = result['0']['COUNT(*)'];
-      console.log(totalReviews);
       res.send({totalReviews: totalReviews});
     }
   });

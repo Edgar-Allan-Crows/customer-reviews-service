@@ -56,8 +56,6 @@ class App extends React.Component {
     })
   }
 
-
-
   loadMore() {
     this.setState({
       showReviews: this.state.showReviews += 3
