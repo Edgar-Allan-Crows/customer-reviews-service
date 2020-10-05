@@ -23,13 +23,25 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/api',
+      url: '/api/reviews',
       method: 'GET',
       success: (res) => {
         this.setState({
           reviewsArray: res,
         });
-        console.log(this.state.reviewsArray);
+        //console.log(this.state.reviewsArray);
+      }
+    })
+
+    $.ajax({
+      url: '/api/stats',
+      method: 'GET',
+      success: (res) => {
+        console.log(res);
+        this.setState({
+          totalScore: res.totalScore,
+          totalReviews: res.totalReviews
+        });
       }
     })
   }
