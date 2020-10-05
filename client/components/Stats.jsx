@@ -36,7 +36,7 @@ const Stats = ({handleSortChange, value}) => (
     <TotalScore>
       Total Score:
       <img className="ratingImg" src='https://edgar-allan-crows-reviews-images.s3.amazonaws.com/5-stars.png' />
-      <div>
+      <div id="totalScoreAndReviews">
         <span>5.0</span>
         <span id="noOfReviews">(111 Reviews)</span>
       </div>
