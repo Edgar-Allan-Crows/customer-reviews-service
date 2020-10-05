@@ -126,6 +126,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
   margin-left: 5px;
 }
 
+#totalScoreStars{
+  margin-left: 3.5px;
+}
+
 /* .caret{
   opacity: .7;
   border: 0;

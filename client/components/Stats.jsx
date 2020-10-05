@@ -35,6 +35,7 @@ const Stats = ({handleSortChange, value, totalScore, totalReviews}) => (
   <StatsBar>
     <TotalScore>
       Total Score:
+      <div id="totalScoreStars">
       {[totalScore].map((rating, key) => {
           if (rating === 5) {
             return <img key={key} className="ratingImg" src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/5-stars.png" />
@@ -48,6 +49,7 @@ const Stats = ({handleSortChange, value, totalScore, totalReviews}) => (
             return <img key={key} className="ratingImg" src="https://edgar-allan-crows-reviews-images.s3.amazonaws.com/1-star.png"/>
           }
         })}
+      </div>
       <div>
         <span>{totalScore}.0</span>
         <span id="noOfReviews">({totalReviews} Reviews)</span>
