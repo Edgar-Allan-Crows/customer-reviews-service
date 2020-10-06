@@ -23,13 +23,32 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/api',
+      url: '/api/reviews',
       method: 'GET',
       success: (res) => {
         this.setState({
           reviewsArray: res,
         });
-        console.log(this.state.reviewsArray);
+      }
+    })
+
+    $.ajax({
+      url: '/api/totalScore',
+      method: 'GET',
+      success: (res) => {
+        this.setState({
+          totalScore: res.totalScore
+        });
+      }
+    })
+
+    $.ajax({
+      url: '/api/reviewCount',
+      method: 'GET',
+      success: (res) => {
+        this.setState({
+          totalReviews: res.totalReviews
+        });
       }
     })
   }
@@ -70,7 +89,7 @@ class App extends React.Component {
     return (
       <div id="container">
         <h2 id="componentTitle">Customer Reviews</h2>
-        <Stats handleSortChange={this.handleSortChange}/>
+        <Stats totalScore={this.state.totalScore} totalReviews={this.state.totalReviews} handleSortChange={this.handleSortChange}/>
         <ReviewsFeed reviewsArray={this.state.reviewsArray} showReviews={this.state.showReviews}/>
         <button id="loadMoreButton" onClick={this.loadMore}>Load More</button>
       </div>
