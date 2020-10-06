@@ -6,6 +6,7 @@ import $ from 'jquery';
 import Stats from './components/Stats.jsx';
 import Sort from './components/Sort.jsx';
 import ReviewsFeed from './components/ReviewsFeed.jsx';
+const URL = 'http://localhost:3004/api';
 
 class App extends React.Component {
   constructor() {
@@ -23,7 +24,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/api',
+      url: URL,
       method: 'GET',
       success: (res) => {
         this.setState({
