@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
 
 @media (min-width: 1200px){
 #container {
-    max-width: 1030px;
+    max-width: 2000px;
 }}
 
 @media (min-width: 1200px){
@@ -30,15 +30,25 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .h2-s, .h3-s {
     max-width: 970px;
 }}
 
-@media (min-width: 768px){
+@media (max-width: 700px){
+  #writeReviewLink {
+      display: none;
+  }
+
+  #totalScoreAndReviews{
+    display: none;
+  }
+}
+
+/* @media (min-width: 768px){
 #container {
     max-width: 750px;
-}}
+}} */
 
 #container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
