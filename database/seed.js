@@ -16,8 +16,10 @@ connection.connect((err) => {
 
   let reviews_count = 0;
   let images_count = 0;
+  let total_review_count = Math.floor(Math.random() * (80 - 25 + 1) + 25); //Set a random amount of reviews btwn 25 and 80 on each product
+  let total_images_count = Math.floor(Math.random() * (25 - 5 + 1) + 5); //Set a random amount of images btwn 5 and 25 on each product
 
-  while (reviews_count < 100) {
+  while (reviews_count < total_review_count) {
     // Use faker to create test data
     var username_fake = faker.name.firstName();
     var fecha_fake = faker.date.past();
@@ -36,7 +38,7 @@ connection.connect((err) => {
     reviews_count++;
   }
 
-  while (images_count < 25) {
+  while (images_count < total_images_count) {
     var image_review_id = Math.floor(Math.random() * (100 - 1) + 1);
     var image_url_fake = faker.image.imageUrl();
     // Populate images table
