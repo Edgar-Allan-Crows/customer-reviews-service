@@ -31,7 +31,7 @@ connection.connect((err) => {
 
   //// Populates Reviews Table with Random Number of Reviews (Up to 80) For Each Product ////
   let count = 1;
-  while (count <= products_count) {
+  while (count < products_count) {
     let current_reviews_count = 0;
     let total_reviews_count = Math.floor(Math.random() * (80 - 25 + 1) + 25); //Set a random amount of reviews btwn 25 and 80 on each product
     while (current_reviews_count < total_reviews_count) {
