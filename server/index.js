@@ -22,9 +22,10 @@ app.patch(`/:product_id`, (req, res) => {
   });
 })
 
-app.get('/api/totalScore', (req, res) => {
+app.get('/api/totalScore/:product_id', (req, res) => {
+  let product_id = req.params.product_id;
   // Calculate average reviews score
-  let score = db.query('SELECT AVG(rating) AS AverageScore FROM reviews', (err, results) => {
+  let score = db.query(`SELECT AVG(rating) AS AverageScore FROM reviews WHERE product_id = ${product_id}`, (err, results) => {
     if (err) {
       console.log('There was an error getting the average')
       throw err;
@@ -35,9 +36,10 @@ app.get('/api/totalScore', (req, res) => {
   })
 })
 
-app.get('/api/reviewCount', (req, res) => {
+app.get('/api/reviewCount/:product_id', (req, res) => {
+  let product_id = req.params.product_id;
   // Get total number of reviews
-  let noReviews = db.query('SELECT COUNT(*) FROM reviews' , (err, result) => {
+  let noReviews = db.query(`SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id}` , (err, result) => {
     if (err) {
       throw err;
     } else {

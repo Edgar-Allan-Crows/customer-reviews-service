@@ -44,9 +44,10 @@ class App extends React.Component {
     })
 
     $.ajax({
-      url: '/api/totalScore',
+      url: `/api/totalScore/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
+        console.log('success!');
         this.setState({
           totalScore: res.totalScore
         });
@@ -54,7 +55,7 @@ class App extends React.Component {
     })
 
     $.ajax({
-      url: '/api/reviewCount',
+      url: `/api/reviewCount/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
         this.setState({
