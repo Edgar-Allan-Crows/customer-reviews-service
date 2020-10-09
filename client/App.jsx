@@ -15,7 +15,8 @@ class App extends React.Component {
       totalReviews: 0,
       sortedValue: 'highestRating',
       reviewsArray: [],
-      showReviews: 3
+      showReviews: 3,
+      product_id: window.location.pathname.slice(1) ? window.location.pathname.slice(1) : 1
     }
     this.handleSortChange = this.handleSortChange.bind(this);
     this.loadMore = this.loadMore.bind(this);
@@ -23,8 +24,8 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/api/reviews',
-      method: 'GET',
+      url: `/${this.state.product_id}`,
+      method: 'PATCH',
       success: (res) => {
         this.setState({
           reviewsArray: res,
@@ -33,9 +34,20 @@ class App extends React.Component {
     })
 
     $.ajax({
-      url: '/api/totalScore',
+      url: `/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
+        this.setState({
+          product_id: window.location.pathname.slice(1) ? window.location.pathname.slice(1) : 1,
+        });
+      }
+    })
+
+    $.ajax({
+      url: `/api/totalScore/${this.state.product_id}`,
+      method: 'GET',
+      success: (res) => {
+        console.log('success!');
         this.setState({
           totalScore: res.totalScore
         });
@@ -43,7 +55,7 @@ class App extends React.Component {
     })
 
     $.ajax({
-      url: '/api/reviewCount',
+      url: `/api/reviewCount/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
         this.setState({
