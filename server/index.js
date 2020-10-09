@@ -3,6 +3,7 @@ const app = express();
 const port = 3004;
 const db = require('../database/index.js');
 const cors = require('cors');
+const path = require('path');
 
 app.use(cors());
 
@@ -10,6 +11,19 @@ app.use(express.static(__dirname + '/../dist'));
 
 app.get('/api/reviews', (req, res) => {
   db.query('SELECT * FROM reviews', (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+})
+
+app.get(`/:product_id`, (req, res) => {
+  // Write error message here
+  res.sendFile(path.resolve('dist/index.html'));
+})
+
+app.patch(`/:product_id`, (req, res) => {
+  let product_id = req.params.product_id;
+  db.query(`SELECT * FROM reviews WHERE product_id = ${product_id}`, (err, result) => {
     if (err) throw err;
     res.send(result);
   });

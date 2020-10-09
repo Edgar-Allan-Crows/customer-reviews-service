@@ -15,7 +15,8 @@ class App extends React.Component {
       totalReviews: 0,
       sortedValue: 'highestRating',
       reviewsArray: [],
-      showReviews: 3
+      showReviews: 3,
+      product_id: window.location.pathname.slice(1) ? window.location.pathname.slice(1) : 1
     }
     this.handleSortChange = this.handleSortChange.bind(this);
     this.loadMore = this.loadMore.bind(this);
@@ -25,6 +26,26 @@ class App extends React.Component {
     $.ajax({
       url: '/api/reviews',
       method: 'GET',
+      success: (res) => {
+        this.setState({
+          reviewsArray: res,
+        });
+      }
+    })
+
+    $.ajax({
+      url: `/${this.state.product_id}`,
+      method: 'GET',
+      success: (res) => {
+        this.setState({
+          product_id: window.location.pathname.slice(1) ? window.location.pathname.slice(1) : 1,
+        });
+      }
+    })
+
+    $.ajax({
+      url: `/${this.state.product_id}`,
+      method: 'PATCH',
       success: (res) => {
         this.setState({
           reviewsArray: res,
