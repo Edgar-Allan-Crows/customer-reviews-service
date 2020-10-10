@@ -1,19 +1,20 @@
 const mysql = require('mysql');
 const faker = require('faker');
 require('dotenv').config();
+const db = require('./index.js');
 
-console.log(process.env);
+//console.log(process.env);
 
 // Open a connection to the database
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: '',
-  database: process.env.DB_DATABASE
-});
+// const connection = mysql.createConnection({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: '',
+//   database: process.env.DB_DATABASE
+// });
 
 // Populate reviews table
-connection.connect((err) => {
+db.connection.connect((err) => {
   if (err) {
     console.log(err);
   }
@@ -25,7 +26,7 @@ connection.connect((err) => {
   //// Populates Products Table with 100 Products ////
   while (products_count <= 100) {
     let product_entry = `INSERT INTO products (product_id) VALUES ("${products_count}")`;
-    connection.query(product_entry, (err, result) => {
+    db.connection.query(product_entry, (err, result) => {
       if (err) {
         throw err;
       } else {
@@ -52,7 +53,7 @@ connection.connect((err) => {
 
       // Populate reviews table
       let entry = `INSERT INTO reviews (product_id, username, fecha, city_state, rating, title, review_body) VALUES ("${count}", "${username_fake}", "${formattedDate}", "${city_state_fake}", "${rating_fake}", "${title_fake}", "${review_body_fake}")`;
-      connection.query(entry, (err, result) => {
+      db.connection.query(entry, (err, result) => {
         if (err) throw err;
         console.log('1 reviews table record inserted');
       });
@@ -77,6 +78,6 @@ connection.connect((err) => {
   // }
 
   // Close database connection
-  connection.end();
+  db.connection.end();
 
 // Now figure out S3 to host images there
