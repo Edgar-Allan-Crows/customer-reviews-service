@@ -1,18 +1,24 @@
 const mysql = require('mysql');
 const faker = require('faker');
+require('dotenv').config();
+
+console.log(process.env);
 
 // Open a connection to the database
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
-  password: process.env.DB_PASS,
+  password: '',
   database: process.env.DB_DATABASE
 });
 
 // Populate reviews table
 connection.connect((err) => {
-  if (err) throw err;
+  if (err) {
+    console.log(err);
+  }
   console.log('Database connected to populate reviews table!');
+});
 
   let products_count = 1;
 
@@ -72,6 +78,5 @@ connection.connect((err) => {
 
   // Close database connection
   connection.end();
-});
 
 // Now figure out S3 to host images there
