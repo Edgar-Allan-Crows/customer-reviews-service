@@ -4,8 +4,8 @@ const faker = require('faker');
 // Open a connection to the database
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "password!",
+  user: "joe",
+  password: "",
   database: "fec_reviews"
 });
 
