@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "webpack -d --watch --config webpack.config.js",
-    "db:seed": "mysql -u joe < database/schema.sql && node ./database/seed.js",
+    "db:schema": "mysql -u joe < database/schema.sql",
+    "db:seed": "node ./database/seed.js",
     "start": "nodemon ./server/index.js",
     "test": "jest --coverage"
   },
@@ -49,6 +50,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",

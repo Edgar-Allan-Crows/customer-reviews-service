@@ -4,6 +4,7 @@ const port = 3004;
 const db = require('../database/index.js');
 const cors = require('cors');
 const path = require('path');
+const env = require('dotenv').config();
 
 app.use(cors());
 
