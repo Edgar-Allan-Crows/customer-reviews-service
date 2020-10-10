@@ -3,16 +3,6 @@ const faker = require('faker');
 require('dotenv').config();
 const db = require('./index.js');
 
-//console.log(process.env);
-
-// Open a connection to the database
-// const connection = mysql.createConnection({
-//   host: process.env.DB_HOST,
-//   user: process.env.DB_USER,
-//   password: '',
-//   database: process.env.DB_DATABASE
-// });
-
 // Populate reviews table
 db.connection.connect((err) => {
   if (err) {
@@ -79,5 +69,3 @@ db.connection.connect((err) => {
 
   // Close database connection
   db.connection.end();
-
-// Now figure out S3 to host images there
