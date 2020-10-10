@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack -d --watch --config webpack.config.js",
-    "db:seed": "sudo mysql -u root -p < database/schema.sql && node ./database/seed.js",
+    "db:seed": "mysql -u joe < database/schema.sql && node ./database/seed.js",
     "start": "nodemon ./server/index.js",
     "test": "jest --coverage"
   },
