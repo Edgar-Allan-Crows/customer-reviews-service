@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS fec_reviews;
+
 CREATE DATABASE IF NOT EXISTS fec_reviews;
 
 USE fec_reviews;
