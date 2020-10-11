@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3004;
+const port = 3000;
 const db = require('../database/index.js');
 const cors = require('cors');
 const path = require('path');
-const env = require('dotenv').config();
 
 app.use(cors());
 
@@ -15,9 +14,9 @@ app.get(`/:product_id`, (req, res) => {
   res.sendFile(path.resolve('dist/index.html'));
 })
 
-app.patch(`/:product_id`, (req, res) => {
+app.patch('/:product_id', (req, res) => {
   let product_id = req.params.product_id;
-  db.query(`SELECT * FROM reviews WHERE product_id = ${product_id}`, (err, result) => {
+  db.connection.query(`SELECT * FROM reviews WHERE product_id = ${product_id}`, (err, result) => {
     if (err) throw err;
     res.send(result);
   });
@@ -26,7 +25,7 @@ app.patch(`/:product_id`, (req, res) => {
 app.get('/api/totalScore/:product_id', (req, res) => {
   let product_id = req.params.product_id;
   // Calculate average reviews score
-  let score = db.query(`SELECT AVG(rating) AS AverageScore FROM reviews WHERE product_id = ${product_id}`, (err, results) => {
+  let score = db.connection.query(`SELECT AVG(rating) AS AverageScore FROM reviews WHERE product_id = ${product_id}`, (err, results) => {
     if (err) {
       console.log('There was an error getting the average')
       throw err;
@@ -40,7 +39,7 @@ app.get('/api/totalScore/:product_id', (req, res) => {
 app.get('/api/reviewCount/:product_id', (req, res) => {
   let product_id = req.params.product_id;
   // Get total number of reviews
-  let noReviews = db.query(`SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id}` , (err, result) => {
+  let noReviews = db.connection.query(`SELECT COUNT(*) FROM reviews WHERE product_id = ${product_id}` , (err, result) => {
     if (err) {
       throw err;
     } else {

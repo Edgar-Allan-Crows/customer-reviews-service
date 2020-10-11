@@ -24,7 +24,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: `/${this.state.product_id}`,
+      url: `http://34.228.73.56/${this.state.product_id}`,
       method: 'PATCH',
       success: (res) => {
         this.setState({
@@ -34,7 +34,7 @@ class App extends React.Component {
     })
 
     $.ajax({
-      url: `/${this.state.product_id}`,
+      url: `http://34.228.73.56/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
         this.setState({
@@ -44,7 +44,7 @@ class App extends React.Component {
     })
 
     $.ajax({
-      url: `/api/totalScore/${this.state.product_id}`,
+      url: `http://34.228.73.56/api/totalScore/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
         console.log('success!');
