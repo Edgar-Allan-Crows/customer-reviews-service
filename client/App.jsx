@@ -24,27 +24,30 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: `http://34.228.73.56/${this.state.product_id}`,
-      method: 'PATCH',
-      success: (res) => {
-        this.setState({
-          reviewsArray: res,
-        });
-      }
-    })
-
-    $.ajax({
-      url: `http://34.228.73.56/${this.state.product_id}`,
+      url: `/${this.state.product_id}`,
+      // url: `http://34.228.73.56/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
         this.setState({
-          product_id: window.location.pathname.slice(1) ? window.location.pathname.slice(1) : 1,
+          product_id: window.location.pathname.slice(1) ? window.location.pathname.slice(1) : 1
         });
       }
     })
 
     $.ajax({
-      url: `http://34.228.73.56/api/totalScore/${this.state.product_id}`,
+      url: `/api/${this.state.product_id}`,
+      // url: `http://34.228.73.56/api/${this.state.product_id}`,
+      method: 'GET',
+      success: (res) => {
+        this.setState({
+          reviewsArray: res
+        });
+      }
+    })
+
+    $.ajax({
+      url: `/api/totalScore/${this.state.product_id}`,
+      // url: `http://34.228.73.56/api/totalScore/${this.state.product_id}`,
       method: 'GET',
       success: (res) => {
         console.log('success!');
