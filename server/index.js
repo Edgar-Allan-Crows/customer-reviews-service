@@ -9,12 +9,17 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/../dist'));
 
-app.get(`/:product_id`, (req, res) => {
+// app.get('/*', (req, res) => {
+//   res.sendFile('/Users/christophercali/Desktop/fec/customer-reviews-service/dist/index.html');
+// })
+
+app.get('/:product_id', (req, res) => {
   // Write error message here
   res.sendFile(path.resolve('dist/index.html'));
 })
 
-app.patch('/:product_id', (req, res) => {
+app.get(`/api/:product_id`, (req, res) => {
+  // Send back reviews data and adjust data array in state
   let product_id = req.params.product_id;
   db.connection.query(`SELECT * FROM reviews WHERE product_id = ${product_id}`, (err, result) => {
     if (err) throw err;
