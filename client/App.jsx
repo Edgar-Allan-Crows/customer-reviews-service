@@ -40,7 +40,7 @@ class App extends React.Component {
       method: 'GET',
       success: (res) => {
         this.setState({
-          reviewsArray: res
+	  reviewsArray: res.sort((a, b) => {return b.rating - a.rating; })
         });
       }
     })
